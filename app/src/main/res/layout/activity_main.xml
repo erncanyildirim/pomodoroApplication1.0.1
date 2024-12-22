@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/main_layout">
+
+        <!-- Gece-Gündüz Modu Butonu -->
+        <Button
+            android:id="@+id/modeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Change Mode"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:onClick="onModeButtonClicked" /> <!-- onClick metodu eklendi -->
+
+        <Chronometer
+            android:id="@+id/timerTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="36sp"
+            android:layout_centerInParent="true"
+            android:textColor="@color/white"
+            android:visibility="visible"/>
+
+        <!-- Süre ayarlama butonu -->
+        <Button
+            android:id="@+id/set_time_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Süre Ayarla"
+            android:layout_below="@id/timerTextView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:onClick="onSetTimeClicked" /> <!-- onClick metodu eklendi -->
+
+        <!-- Kronometreyi başlatma/durdurma butonu -->
+        <Button
+            android:id="@+id/start_stop_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Başlat/Durdur"
+            android:layout_below="@id/timerTextView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:onClick="onStartStopClicked" /> <!-- onClick metodu eklendi -->
+
+        <!-- Kronometreyi sıfırlama butonu -->
+        <Button
+            android:id="@+id/reset_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sıfırla"
+            android:layout_below="@id/start_stop_button"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:onClick="onResetClicked" /> <!-- onClick metodu eklendi -->
+
+        <!-- Timer (geri sayım) -->
+        <TextView
+            android:id="@+id/timer_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:00"
+            android:textSize="36sp"
+            android:layout_centerInParent="true"
+            android:textColor="@color/black"
+            android:visibility="gone"/> <!-- Başlangıçta gizli -->
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
